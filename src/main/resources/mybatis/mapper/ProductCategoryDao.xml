@@ -4,12 +4,25 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yat.wechatorderingsystem.dao.ProductCategoryDao">
 
-    <select id="selectById" resultType="com.yat.wechatorderingsystem.entity.ProductCategory">
+    <select id="selectById" resultType="productCategory">
         select * from product_category where category_id=${id}
     </select>
 
-    <insert id="insertProductCategory" parameterType="com.yat.wechatorderingsystem.entity.ProductCategory">
-        insert into product_category(category_id, category_name, category_type)
-        values (#{categoryId},#{categoryName},#{categoryType})
+    <select id="selectByType" resultType="productCategory">
+        select * from product_category where category_type in
+        <foreach collection="list" item="categoryType" separator=","
+                 open="(" close=")">
+            #{categoryType}
+        </foreach>
+    </select>
+
+    <insert id="insertProductCategory" parameterType="productCategory"
+            useGeneratedKeys="true" keyProperty="categoryId">
+        insert into product_category(category_name, category_type)
+        values (#{categoryName},#{categoryType})
     </insert>
+
+    <update id="updateProductCategory" parameterType="productCategory">
+        update product_category set category_type=#{categoryType} where category_id=#{categoryId}
+    </update>
 </mapper>

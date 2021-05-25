@@ -21,7 +21,8 @@
             </pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${FILE_PATH}/rolling%d{yyyy-MM-dd_HH-mm}.log</fileNamePattern>
+            <fileNamePattern>${FILE_PATH}/rolling%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>5</maxHistory>
         </rollingPolicy>
     </appender>
 
@@ -35,7 +36,8 @@
             </pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${FILE_PATH}/error%d{yyyy-MM-dd_HH-mm}.log</fileNamePattern>
+            <fileNamePattern>${FILE_PATH}/error%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>5</maxHistory>
         </rollingPolicy>
     </appender>
 

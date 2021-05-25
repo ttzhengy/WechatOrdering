@@ -10,7 +10,8 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductCategory {
+
     private Integer categoryId;
     private String categoryName;
-    private String categoryType;
+    private Integer categoryType;
 }
