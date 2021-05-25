@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yat.wechatorderingsystem.dao.ProductInfoDao">
+
+    <select id="selectById" resultType="productInfo">
+        select * from product_info where product_id=#{id}
+    </select>
+
+    <select id="selectByCategoryType" resultType="productInfo">
+        select * from product_info where category_type=#{type}
+    </select>
+
+    <select id="selectByProductStatus" resultType="productInfo">
+        select * from product_info where product_status=#{status}
+    </select>
+
+    <insert id="insertProductInfo" parameterType="productInfo">
+        insert into product_info(product_id,
+                                 product_name,
+                                 product_price,
+                                 product_stock,
+                                 product_description,
+                                 product_icon,
+                                 category_type)
+        VALUES (#{productId},
+                #{productName},
+                #{productPrice},
+                #{productStock},
+                #{productDescription},
+                #{productIcon},
+                #{categoryType})
+    </insert>
+
+    <update id="updateProductInfo" parameterType="productInfo">
+        update product_info
+        set product_name=#{productName},
+            product_price=#{productPrice},
+            product_stock=#{productStock},
+            product_description=#{productDescription},
+            product_icon=#{categoryType},
+            product_status=#{productStatus},
+            category_type=#{categoryType}
+        where product_id=#{productId}
+    </update>
+
+</mapper>

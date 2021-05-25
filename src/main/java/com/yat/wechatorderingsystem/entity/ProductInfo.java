@@ -12,12 +12,12 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductInfo {
-    private String productID;
+    private String productId;
     private String productName;
-    private BigDecimal price;
+    private BigDecimal productPrice;
     private Integer productStock;
     private String productDescription;
     private String productIcon;
-    private Short productStatus;
+    private Integer productStatus;
     private Integer categoryType;
 }

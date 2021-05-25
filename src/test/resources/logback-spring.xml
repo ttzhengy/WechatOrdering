@@ -9,7 +9,7 @@
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
             <pattern>
-                %d --- %msg%n
+                %d{HH:mm:ss} --- %msg%n
             </pattern>
         </layout>
     </appender>
@@ -17,11 +17,11 @@
     <appender name="fileInfoLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <encoder>
             <pattern>
-                %msg%n
+                %d{HH:mm:ss} - %msg%n
             </pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${FILE_PATH}/rolling%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${FILE_PATH}/rolling%d{yyyy-MM-dd_HH-mm}.log</fileNamePattern>
             <maxHistory>5</maxHistory>
         </rollingPolicy>
     </appender>
@@ -32,11 +32,11 @@
         </filter>
         <encoder>
             <pattern>
-                %msg%n
+                %d{HH:mm:ss} - %msg%n
             </pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${FILE_PATH}/error%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${FILE_PATH}/error%d{yyyy-MM-dd_HH-mm}.log</fileNamePattern>
             <maxHistory>5</maxHistory>
         </rollingPolicy>
     </appender>
