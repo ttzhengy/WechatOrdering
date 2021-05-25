@@ -8,11 +8,12 @@ import java.util.List;
 
 @Mapper
 public interface ProductCategoryDao {
-    public ProductCategory selectById(int id);
 
-    public List<ProductCategory> selectByType(List<Integer> types);
+    ProductCategory selectById(int id);
 
-    public void insertProductCategory(ProductCategory productCategory);
+    List<ProductCategory> selectByType(List<Integer> types);
 
-    public void updateProductCategory(ProductCategory productCategory);
+    void insertProductCategory(ProductCategory productCategory);
+
+    void updateProductCategory(ProductCategory productCategory);
 }
