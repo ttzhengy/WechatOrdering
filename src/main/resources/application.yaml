@@ -17,3 +17,12 @@ logging:
 ##  file:
 ##    path:
 ##    name:
+
+pagehelper:
+#  数据库语言
+  helper-dialect: mysql
+#  配置分页参数合理化功能，默认是false
+  reasonable: true
+#  支持通过 Mapper 接口参数来传递分页参数
+  support-methods-arguments: true
+  params: count=countSql
