@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yat.wechatorderingsystem.dao.OrderMasterDao">
+
+    <select id="selectById" resultType="orderMaster">
+        select * from order_master where order_id=#{id}
+    </select>
+
+    <select id="selectByBuyerOpenId" resultType="orderMaster">
+        select * from order_master where buyer_openid=#{id}
+    </select>
+
+    <insert id="insertOrderMaster" parameterType="orderMaster">
+        insert into order_master(order_id,
+                                 buyer_name,
+                                 buyer_phone,
+                                 buyer_address,
+                                 buyer_openid,
+                                 order_amount,
+                                 order_status,
+                                 pay_status)
+        values (#{orderId},
+                #{buyerName},
+                #{buyerPhone},
+                #{buyerAddress},
+                #{buyerOpenid},
+                #{orderAmount},
+                #{orderStatus},
+                #{payStatus})
+    </insert>
+
+    <update id="updateOrderMaster" parameterType="orderMaster">
+        update order_master
+        set buyer_name=#{buyerName},
+            buyer_phone=#{buyerPhone},
+            buyer_address=#{buyerAddress},
+            buyer_openid=#{buyerOpenid},
+            order_amount=#{orderAmount},
+            order_status=#{orderStatus},
+            pay_status=#{payStatus}
+        where order_id=#{orderId}
+    </update>
+</mapper>
