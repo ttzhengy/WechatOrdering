@@ -4,10 +4,10 @@ public enum ProductStatusEnum {
     ONSALE(0,"商品上架"),
     OFFSHELVES(1,"商品下架");
 
-    private int status;
+    private Integer status;
     private String message;
 
-    private ProductStatusEnum(int status, String message){
+    private ProductStatusEnum(Integer status, String message){
         this.status = status;
         this.message = message;
     }
