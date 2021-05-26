@@ -1,5 +1,6 @@
 package com.yat.wechatorderingsystem.entity;
 
+import com.yat.wechatorderingsystem.enums.ProductStatusEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,6 +19,7 @@ public class ProductInfo {
     private Integer productStock;
     private String productDescription;
     private String productIcon;
-    private Integer productStatus;
+    private Integer productStatus = 0;
+    // private Integer productStatus = ProductStatusEnum.ONSALE.getStatus();
     private Integer categoryType;
 }
