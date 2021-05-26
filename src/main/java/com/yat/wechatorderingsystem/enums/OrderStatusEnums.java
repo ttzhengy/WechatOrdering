@@ -5,10 +5,10 @@ public enum OrderStatusEnums {
     FINISHED(1,"订单已完成"),
     CANCEL(2,"订单已取消");
 
-    private int status;
+    private Integer status;
     private String message;
 
-    private OrderStatusEnums(int status,String message){
+    private OrderStatusEnums(Integer status,String message){
         this.status = status;
         this.message = message;
     }
