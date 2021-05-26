@@ -4,8 +4,8 @@ import lombok.Getter;
 
 @Getter
 public enum PayStatusEnums {
-    WAIT(0,"新订单"),
-    PAYED(1,"订单已完成");
+    WAIT(0,"等待支付"),
+    PAYED(1,"已支付");
 
     private Integer status;
     private String message;
