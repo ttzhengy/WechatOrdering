@@ -1,5 +1,8 @@
 package com.yat.wechatorderingsystem.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum OrderStatusEnums {
     NEW(0,"新订单"),
     FINISHED(1,"订单已完成"),

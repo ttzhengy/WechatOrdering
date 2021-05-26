@@ -1,5 +1,8 @@
 package com.yat.wechatorderingsystem.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum ProductStatusEnum {
     ONSALE(0,"商品上架"),
     OFFSHELVES(1,"商品下架");
