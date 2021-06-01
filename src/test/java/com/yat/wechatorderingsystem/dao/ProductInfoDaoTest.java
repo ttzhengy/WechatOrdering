@@ -50,11 +50,13 @@ class ProductInfoDaoTest {
 
     @Test
     @Transactional
-    @Rollback(value = true)
+    @Rollback(value = false)
     void updateProductInfoTest() {
         ProductInfo skadi = productInfoDao.selectById("1002");
         skadi.setCategoryType(1);
         boolean flag = productInfoDao.updateProductInfo(skadi);
         Assertions.assertTrue(flag,"修改失败");
+        ProductInfo productInfo = productInfoDao.selectById("1002");
+        System.out.println(productInfo.getProductName());
     }
 }

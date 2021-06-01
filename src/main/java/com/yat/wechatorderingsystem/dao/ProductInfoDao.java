@@ -10,6 +10,8 @@ public interface ProductInfoDao {
 
     ProductInfo selectById(String id);
 
+    List<ProductInfo> selectAll();
+
     List<ProductInfo> selectByCategoryType(Integer type);
 
     List<ProductInfo> selectByProductStatus(Integer status);

@@ -8,6 +8,10 @@
         select * from product_info where product_id=#{id}
     </select>
 
+    <select id="selectAll" resultType="productInfo">
+        select * from product_info
+    </select>
+
     <select id="selectByCategoryType" resultType="productInfo">
         select * from product_info where category_type=#{type}
     </select>
@@ -39,7 +43,7 @@
             product_price=#{productPrice},
             product_stock=#{productStock},
             product_description=#{productDescription},
-            product_icon=#{categoryType},
+            product_icon=#{productIcon},
             product_status=#{productStatus},
             category_type=#{categoryType}
         where product_id=#{productId}
