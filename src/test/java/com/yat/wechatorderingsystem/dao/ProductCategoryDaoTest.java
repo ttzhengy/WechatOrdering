@@ -29,23 +29,32 @@ class ProductCategoryDaoTest {
     }
 
     @Test
+    @Transactional
+    @Rollback(value = false)
+    public void selectAllTest(){
+        List<ProductCategory> productCategories = productCategoryDao.selectAll();
+        productCategories.forEach(System.out::println);
+        Assertions.assertNotEquals(0,productCategories.size());
+    }
+
+    @Test
     @Transactional  //这两个注解负责事务回滚
     @Rollback(value = true)
     public void insertTest(){
-        ProductCategory  productCategory = new ProductCategory(null,"ccc",44);
+        ProductCategory  productCategory = new ProductCategory(null,"zzz",1212);
         productCategoryDao.insertProductCategory(productCategory);
         System.out.println(productCategory.getCategoryId());
     }
 
     @Test
     @Transactional
-    @Rollback(value = false)
+    @Rollback(value = true)
     public void updateByIdTest(){
         ProductCategory productCategory = productCategoryDao.selectById(2);
-        productCategory.setCategoryType(44);
+        productCategory.setCategoryType(45);
         productCategoryDao.updateProductCategory(productCategory);
         productCategory = productCategoryDao.selectById(2);
-        Assertions.assertEquals(productCategory.getCategoryType(),44);
+        Assertions.assertEquals(productCategory.getCategoryType(),45);
     }
 
     @Test

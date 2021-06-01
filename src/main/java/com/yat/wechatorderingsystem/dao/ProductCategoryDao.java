@@ -11,9 +11,11 @@ public interface ProductCategoryDao {
 
     ProductCategory selectById(int id);
 
+    List<ProductCategory> selectAll();
+
     List<ProductCategory> selectByType(List<Integer> types);
 
-    void insertProductCategory(ProductCategory productCategory);
+    boolean insertProductCategory(ProductCategory productCategory);
 
-    void updateProductCategory(ProductCategory productCategory);
+    boolean updateProductCategory(ProductCategory productCategory);
 }

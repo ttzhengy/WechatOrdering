@@ -8,6 +8,10 @@
         select * from product_category where category_id=#{id}
     </select>
 
+    <select id="selectAll" resultType="productCategory">
+        select * from product_category
+    </select>
+
     <select id="selectByType" resultType="productCategory">
         select * from product_category where category_type in
         <foreach collection="list" item="categoryType" separator=","
@@ -23,6 +27,9 @@
     </insert>
 
     <update id="updateProductCategory" parameterType="productCategory">
-        update product_category set category_type=#{categoryType} where category_id=#{categoryId}
+        update product_category
+        set category_type=#{categoryType},
+            category_name=#{categoryName}
+        where category_id=#{categoryId}
     </update>
 </mapper>
