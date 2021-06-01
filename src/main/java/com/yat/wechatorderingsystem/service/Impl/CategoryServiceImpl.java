@@ -1,4 +1,4 @@
-package com.yat.wechatorderingsystem.service.impl;
+package com.yat.wechatorderingsystem.service.Impl;
 
 import com.yat.wechatorderingsystem.dao.ProductCategoryDao;
 import com.yat.wechatorderingsystem.entity.ProductCategory;

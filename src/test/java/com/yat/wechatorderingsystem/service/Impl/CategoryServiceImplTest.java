@@ -1,6 +1,5 @@
-package com.yat.wechatorderingsystem.service.impl;
+package com.yat.wechatorderingsystem.service.Impl;
 
-import com.yat.wechatorderingsystem.dao.ProductCategoryDao;
 import com.yat.wechatorderingsystem.entity.ProductCategory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -10,8 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class CategoryServiceImplTest {
