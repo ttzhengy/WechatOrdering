@@ -18,5 +18,5 @@ public class CategoryVO {
 
     // 商品列表
     @JsonProperty(value = "foods")
-    private List<ProductVO> list;
+    private List<ProductVO> productVOList;
 }
