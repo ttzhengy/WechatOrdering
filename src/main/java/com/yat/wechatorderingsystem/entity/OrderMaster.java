@@ -20,7 +20,9 @@ public class OrderMaster {
     private String buyerAddress;
     private String buyerOpenid;
     private BigDecimal orderAmount;
+    // 0新下单，1已完成，2取消订单
     private Integer orderStatus = 0;
+    // 0未支付，1已支付
     private Integer payStatus = 0;
     // private Integer orderStatus = OrderStatusEnums.NEW.getStatus();
     // private Integer payStatus = PayStatusEnums.WAIT.getStatus();
