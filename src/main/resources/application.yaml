@@ -1,9 +1,13 @@
 spring:
+  devtools:
+    restart:
+      enabled: true
   datasource:
     url: jdbc:mysql://10.23.12.129:3306/WechatOrder?useSSL=false&charaterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
+
 
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
@@ -26,3 +30,7 @@ pagehelper:
 #  支持通过 Mapper 接口参数来传递分页参数
   support-methods-arguments: true
   params: count=countSql
+
+server:
+  servlet:
+    context-path: /yatorder
