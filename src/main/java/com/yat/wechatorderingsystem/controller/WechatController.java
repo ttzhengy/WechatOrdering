@@ -49,7 +49,7 @@ public class WechatController {
             throw new SellException(ResultEnum.WECHAT_MP_ERROR.getCode(),e.getError().getErrorMsg());
         }
         String openId = accessToken.getOpenId();
-        openId = "oTgZpwZ5g0I7Z4RaR3gIntAaHyzA";
+        openId = "略略略";
 
         return "redirect:" + retrunUrl + "?openid=" + openId;
     }
