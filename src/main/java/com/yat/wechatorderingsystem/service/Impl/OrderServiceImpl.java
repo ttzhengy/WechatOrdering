@@ -31,13 +31,16 @@ import java.util.stream.Collectors;
 public class OrderServiceImpl implements OrderService {
 
     @Autowired
-    ProductServiceImpl productService;
+    private ProductServiceImpl productService;
 
     @Autowired
-    OrderDetailDao orderDetailDao;
+    private OrderDetailDao orderDetailDao;
 
     @Autowired
-    OrderMasterDao orderMasterDao;
+    private OrderMasterDao orderMasterDao;
+
+    @Autowired
+    private PayServiceImpl payService;
 
     @Override
     @Transactional
@@ -146,7 +149,7 @@ public class OrderServiceImpl implements OrderService {
 
         // 如果已支付，退款
         if (orderDTO.getPayStatus()==1){
-            // TODO 退款
+            payService.refund(orderDTO);
         }
 
         return orderDTO;
