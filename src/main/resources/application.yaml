@@ -47,11 +47,4 @@ server:
 
 wechat:
 #  支付测试
-#  mpAppId: wxd898fcb01713c658
-  mchId: 1483469312
-  mchKey: 7mdApPMfXddfWWbbP4DUaVYm2wjyh3v3
-  KeyPath: F:/jworkplace/Wechat ordering system/wechat_cert/h5.p12
-  notifyUrl: http://yatorder.nat300.top/yatorder/pay/notify
 #  授权测试公众号
-  mpAppId: wx6d1f1abe56877c04
-  mpAppSecret: 97a4e9b1d3e8e28dbd55d5b44f84561e
