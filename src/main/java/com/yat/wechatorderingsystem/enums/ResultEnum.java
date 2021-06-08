@@ -12,7 +12,9 @@ public enum ResultEnum {
     ORDERDETAIL_EMPTY(16,"订单详情为空"),
     ORDER_PAID_STATUS_ERROR(17,"支付状态不正确"),
     CART_EMPTY(18,"购物车为空"),
-    ORDER_OWNER_ERROR(19,"该订单不属于当前用户");
+    ORDER_OWNER_ERROR(19,"该订单不属于当前用户"),
+    WECHAT_MP_ERROR(20,"微信公众号方面错误"),
+    WXPAY_NOTIFY_MONEY_VERITY_ERROR(21,"微信支付异步通知金额校验不通过");
 
     private Integer code;
     private String msg;
